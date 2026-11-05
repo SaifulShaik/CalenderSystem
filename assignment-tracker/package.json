@@ -1,0 +1,11 @@
+{
+  "name": "assignment-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal assignment calendar with login and push reminders",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "web-push": "^3.6.7"
+  }
+}

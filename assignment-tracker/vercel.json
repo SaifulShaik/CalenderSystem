@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "public",
+  "functions": {
+    "api/assistant.js": { "maxDuration": 60 },
+    "api/plan-day.js": { "maxDuration": 60 }
+  }
+}

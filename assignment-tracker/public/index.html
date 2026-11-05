@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Planner</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Planner">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="login-view" class="card narrow hidden">
+    <h1>Planner</h1>
+    <p class="muted">Sign in to continue.</p>
+    <form id="login-form">
+      <input id="email" type="email" placeholder="Email" autocomplete="email" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+      <p id="login-error" class="error"></p>
+    </form>
+  </section>
+
+  <!-- APP -->
+  <div id="app-view" class="hidden">
+    <nav id="nav" aria-label="Main">
+      <a href="#today" data-screen="today">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Today</span>
+      </a>
+      <a href="#schedule" data-screen="schedule">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Schedule</span>
+      </a>
+      <a href="#assignments" data-screen="assignments">
+        <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg><span>Assignments</span>
+      </a>
+      <a href="#tasks" data-screen="tasks">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span>Tasks</span>
+      </a>
+      <a href="#ai" data-screen="ai">
+        <svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg><span>AI</span>
+      </a>
+      <a href="#settings" data-screen="settings">
+        <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Settings</span>
+      </a>
+    </nav>
+    <main id="screen"></main>
+  </div>
+
+  <dialog id="form-dialog"><form></form></dialog>
+  <div id="toast" class="hidden" role="status"></div>
+
+  <script src="/config.js"></script>
+  <script src="/js/core.js"></script>
+  <script src="/js/push.js"></script>
+  <script src="/js/today.js"></script>
+  <script src="/js/schedule.js"></script>
+  <script src="/js/assignments.js"></script>
+  <script src="/js/tasks.js"></script>
+  <script src="/js/ai.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
